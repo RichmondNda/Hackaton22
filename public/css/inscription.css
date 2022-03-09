@@ -1,0 +1,848 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body
+{
+    background-color: white;
+}
+.navbar
+{
+    display: flex;
+    top: 0;
+    text-align: center;
+    justify-content:space-between;
+    max-height: 130px;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    background-color: white;
+}
+
+.logoH
+{
+    max-width: 200px;
+    cursor: pointer;
+   
+}
+.nav
+{
+    width: auto;
+    text-align: center;
+    padding: 8px;
+    padding-top: 3.5%;
+    padding-right: 2%;
+ 
+}
+.nav ul
+{
+    
+    justify-content: space-around;
+    list-style-type: none;
+}
+.nav ul li
+{
+    font-size: 18px;
+    float: left;
+}
+.nav li a
+{
+    text-decoration: none;
+    padding: 15px 40px;
+    color: rgb(104, 101, 99);
+    border-radius: 10px;
+    text-align: center;
+}
+.nav li a:hover
+{
+    font-size: 105%;
+    background-color: rgb(243, 146, 82);
+    color: white;
+}
+.content
+{
+    
+    text-align: center;
+    margin-top: 7.5%;
+}
+.tete
+{
+
+    text-align: center;
+    padding: 1%;
+}
+.titre
+{
+    font-size: 45px;
+}
+.titre_m
+{
+    padding-top:39px;
+}
+.champs
+{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.groupe
+{
+    padding: 1%;
+    text-align: center;
+}
+.gr
+{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 5%;
+    text-align: start;
+    margin-top: 5%;
+    width: 80%;
+    box-shadow: rgb(150, 148, 148) 1px 1px 12px 1px;
+    margin-left: 5%;
+    
+}
+input [type = text], select
+{
+    width: 100%;
+    padding: 14px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 4%;
+    margin-top: 2%;
+    font-size: 18px;
+    padding-left: 2%;
+}
+
+
+#nomE
+{
+    width: 100%;
+    padding: 14px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    font-size: 18px;
+    padding-left: 2%;
+}
+#lgr
+{
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    font-size: 18px;
+}
+
+.tchamp
+{
+    font-size: 25px;
+}
+.chef
+{
+    padding: 1%;
+}
+.tchef
+{
+    font-size: 25px;
+    margin-top: 0;
+}
+
+input
+{
+    font-size: 18px;
+}
+.info_chef
+{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 4%;
+    text-align: start;
+    margin-top: 4%;
+    box-shadow: rgb(150, 148, 148) 1px 1px 12px 1px;
+  
+}
+.NumMat
+{
+    width: 78.5%;
+    padding: 12px 0;  
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 16px;
+    padding-left: 2%;
+}
+.nom
+{
+    width: 30%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px;
+    padding-left: 2%;
+}
+.Pr
+{
+    width: 49%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px;
+    padding-left: 2%;
+}
+.genre
+{
+    width: 43.4%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px;
+    padding-left: 2%;
+    text-align: start;
+}
+.clax
+{
+    width: 39%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px;
+    padding-left: 2%;
+    text-align: start;
+}
+.email
+{
+    width: 91%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px; 
+    padding-left: 2%;
+}
+
+/* ajout pour la partie des membres */
+
+.NumMat_m
+{
+    width: 78%;
+    padding: 12px 0;  
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 16px;
+    padding-left: 2%;
+}
+.nom_m
+{
+    width: 30%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px;
+    padding-left: 2%;
+}
+.Pr_m
+{
+    width: 48%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px;
+    padding-left: 2%;
+}
+.genre_m
+{
+    width: 43.4%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px;
+    padding-left: 2%;
+    text-align: start;
+}
+.clax_m
+{
+    width: 38%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px;
+    padding-left: 2%;
+    text-align: start;
+}
+.email_m
+{
+    width: 90%;
+    padding: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 16px; 
+    padding-left: 2%;
+}
+
+
+#lchf
+{
+    width: 50%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    font-size: 20px;
+}
+.butn
+{
+    text-align: end;
+    padding-top: 1%;
+    padding-right: 5%;
+    margin-bottom: 2%;
+}
+.button
+{
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #cac7c7;
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 18px;
+  padding: 15px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+ 
+}
+.button span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button span::after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+
+}
+.button:hover span
+{
+    padding-right: 25px;
+}
+.button:hover span::after
+{
+    opacity: 1;
+    right: 0;
+}
+
+@media screen and (max-width:992px)
+{
+    .champs
+    {
+        
+        
+        margin: auto;
+        display: inline;
+        justify-content: center;
+    }
+    .groupe
+    {
+        margin-top: -4%;
+    }
+    .tete
+    {
+        margin-top: -7%;
+    }
+    .tchamp
+    {
+        
+        padding-top: 12%;
+    }
+    .gr
+    {
+        margin-left: 9%;
+        width: 82%
+    }
+    .tchef
+    {
+        padding-top: 4%;
+    }
+    .info_chef
+    {
+        margin-left: 9%;
+        width: 82%;
+    }
+    .butn
+    {
+        text-align: center;
+        margin-left: 10%;
+        padding-top: 3%;
+    }
+
+    .nom
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+    .Pr
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+    .genre
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+        text-align: start;
+    }
+    .clax
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+        text-align: start;
+    }
+    .email
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px; 
+        padding-left: 2%;
+        
+    }
+
+    .NumMat
+    {
+        width: 100%;
+        padding: 12px 0;  
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+
+
+    .nom_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+    .Pr_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+    .genre_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+        text-align: start;
+    }
+    .clax_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+        text-align: start;
+    }
+    .email_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px; 
+        padding-left: 2%;
+        
+    }
+
+    .NumMat_m
+    {
+        width: 100%;
+        padding: 12px 0;  
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+
+    #lchf
+    {
+        width: 100%;
+        margin-top: 2%;
+        margin-bottom: 4%;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 600px)
+{
+   
+
+    .groupe
+    {
+        margin-top: 2%;
+        
+    }
+    .tchef
+    {
+        margin-bottom: 5%;
+        margin-top: 2%;
+    }
+    .logoH
+    {
+        max-width: 130px;
+    }
+    .nav
+    {
+        margin-right: 4%;
+        margin-top: 4.2%;
+    }
+    .nav ul
+    {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .nav li 
+    {
+        float: left;
+    }
+    .nav li a 
+    {
+        display: block;
+        padding: 8px;
+        font-size: 12px;
+    }
+    .nav li a:hover
+    {
+        font-size: 70%;
+        background-color: rgb(243, 146, 82);
+        color: white;
+    }
+    .tchamp 
+    {
+        font-size: 125%;
+    }
+    .tchef 
+    {
+        font-size: 125%;
+    }
+   
+    .nom
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+    .Pr
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+    .genre
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+        text-align: start;
+    }
+    .clax
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+        text-align: start;
+    }
+    .email
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px; 
+        padding-left: 2%;
+    }
+
+    .NumMat
+    {
+        width: 100%;
+        padding: 12px 0;  
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+
+
+    .nom_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+    .Pr_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+    .genre_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+        text-align: start;
+    }
+    .clax_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px;
+        padding-left: 2%;
+        text-align: start;
+    }
+    .email_m
+    {
+        width: 100%;
+        padding: 12px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+        margin-top: 1%;
+        font-size: 16px; 
+        padding-left: 2%;
+    }
+
+    .NumMat_m
+    {
+        width: 100%;
+        padding: 12px 0;  
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        font-size: 16px;
+        padding-left: 2%;
+    }
+
+    #lchf
+    {
+        width: 100%;
+        margin-top: 2%;
+        margin-bottom: 4%;
+        font-size: 18px;
+    }
+    #lgr
+    {
+        width: 100%;
+        margin-top: 2%;
+        margin-bottom: 4%;
+        font-size: 16px;
+    }
+
+  
+}
+    
