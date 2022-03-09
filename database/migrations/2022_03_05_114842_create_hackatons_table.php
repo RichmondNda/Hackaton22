@@ -19,6 +19,8 @@ class CreateHackatonsTable extends Migration
             $table->string('pco_2')->nullable();
             $table->string('annee');
 
+            $table->boolean('inscription')->default(false);
+
             $table->timestamps();
         });
     }

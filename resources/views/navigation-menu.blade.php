@@ -103,18 +103,14 @@
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{ __('Gestion de mon espace') }}
                             </div>
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{ __('Mes informations') }}
                             </x-jet-dropdown-link>
 
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                    {{ __('API Tokens') }}
-                                </x-jet-dropdown-link>
-                            @endif
+                            
 
                             <div class="border-t border-gray-100"></div>
 
@@ -124,7 +120,7 @@
 
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                          @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Se Deconnecter') }}
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -170,14 +166,10 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Mes informations') }}
                 </x-jet-responsive-nav-link>
 
-                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
-                        {{ __('API Tokens') }}
-                    </x-jet-responsive-nav-link>
-                @endif
+                
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}" x-data>
@@ -185,7 +177,7 @@
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Se Deconnecter') }}
                     </x-jet-responsive-nav-link>
                 </form>
 

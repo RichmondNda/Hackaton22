@@ -223,6 +223,8 @@ class Enregistrement extends Component
 
         $this->resetInput();
 
+        
+
     }
 
 }

@@ -32,8 +32,8 @@
                                     value="{{old("nom_groupe")}}" placeholder="Nom de l'équipe" minlength="3" maxlength="30">
                                 
                                  
-                                <label for="lgr">Logo du groupe</label> <br>
-                                <input type="file" id="lgr" wire:model.defer='photo_groupe' accept="image/*"> 
+                                {{-- <label for="lgr">Logo du groupe</label> <br>
+                                <input type="file" id="lgr" wire:model.defer='photo_groupe' accept="image/*">  --}}
                                  
                         </div>
                     </div>

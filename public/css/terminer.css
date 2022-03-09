@@ -1,0 +1,163 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body
+{
+    background-color: white;
+}
+.navbar
+{
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content:space-between;
+    max-height: 140px;
+    position: sticky;
+}
+.logoH
+{
+    max-width: 200px;
+    cursor: pointer;
+    padding-left: 2%;
+
+}
+.nav
+{
+    width: auto;
+    text-align: center;
+    padding-top: 3.5%;
+    padding-right: 2%;
+}
+.nav ul
+{
+    
+    justify-content: space-around;
+    list-style-type: none;
+}
+.nav ul li
+{
+    font-size: 18px;
+    float: left;
+}
+.nav li a
+{
+    text-decoration: none;
+    padding: 15px 40px;
+    color: rgb(104, 101, 99);
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.nav li a:hover
+{
+    font-size: 105%;
+    background-color: rgb(243, 146, 82);
+    color: white;
+}
+.content
+{
+    margin-top: 12%;
+    text-align: center;
+}
+.content h1
+{
+    font-size: 55px;
+    color: rgb(7, 167, 55);
+}
+.content h4
+{
+    font-size: 35px;
+    color: rgb(122, 119, 119);
+    margin-top: 2%;
+}
+button
+{
+    width: 200px;
+    padding: 1%;
+    height: auto;
+    border-radius: 16px;
+    margin: 1px 4%;
+    font-size: 110%;
+    font-weight: bold;
+    border: 2px solid rgb(255, 255, 255);
+    background: rgb(230, 12, 12);
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow:hidden;
+    margin-top: 2%;
+}
+
+
+
+@media screen and (max-width:600px)
+{
+    .logoH
+    {
+        max-width: 130px;
+    }
+    .nav
+    {
+        margin-right: 4%;
+        margin-top: 4.2%;
+    }
+    .nav ul
+    {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .nav li 
+    {
+        float: left;
+    }
+    .nav li a 
+    {
+        display: block;
+        padding: 8px;
+        font-size: 12px;
+    }
+    .nav li a:hover
+    {
+        font-size: 70%;
+        background-color: rgb(243, 146, 82);
+        color: white;
+    }
+    .content
+    {
+        margin-top: 35%;
+        text-align: center;
+    }
+    .content h1
+    {
+        font-size: 32px;
+        color: rgb(7, 167, 55);
+    }
+    .content h4
+    {
+        font-size: 22px;
+        color: rgb(122, 119, 119);
+        margin-top: 3%;
+    }
+    button
+    {
+        width: 120px;
+        padding: 2%;
+        height: auto;
+        border-radius: 16px;
+        margin: 1px 4%;
+        font-size: 90%;
+        font-weight: bold;
+        border: 2px solid rgb(255, 255, 255);
+        background: rgb(230, 12, 12);
+        color: white;
+        cursor: pointer;
+        position: relative;
+        overflow:hidden;
+        margin-top: 1%;
+    }
+
+}

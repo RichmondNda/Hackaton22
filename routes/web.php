@@ -13,9 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+
+Route::get('/', 'App\Http\Controllers\AdminController@welcome')->name('welcome');
+
+// Route::get('/loading', function () {
+//     return view('participants.encours');
+// })->name('encours');
+
+// Route::get('/inscription-terminer', function () {
+//     return view('terminer');
+// })->name('terminer');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -42,6 +49,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // les participants
 
-Route::get('/inscriptions', function() { 
-         return view('participants.inscription') ;
-    })->name('Participants.inscription');
+Route::get('/inscriptions', 'App\Http\Controllers\AdminController@inscription')->name('Participants.inscription');
+Route::get('/inscription-terminer', 'App\Http\Controllers\AdminController@inscriptionterminer')->name('terminer');
+    
