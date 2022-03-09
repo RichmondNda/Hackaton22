@@ -224,7 +224,8 @@ class Enregistrement extends Component
         $this->resetInput();
 
         
-
+        
+        return redirect()->to('/inscription-terminer');
     }
 
 }
