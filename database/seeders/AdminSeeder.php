@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-
+use App\Models\Hackaton;
 use App\Models\User;
 use App\Models\Niveau;
 use Illuminate\Database\Seeder;
@@ -48,6 +48,12 @@ class AdminSeeder extends Seeder
             'name' => 'Administrateur',
             'email' => 'adminHackaton@C2E.com',
             'password' => Hash::make("@Hackaton@2k22@")
+        ]);
+
+        $hack = Hackaton::create([
+            'pco_1' => 'N\'DA Regis Richmond',
+            'pco_2' => 'DJE BI Mointi Jean Patrice',
+            'annee' => '2022'
         ]);
 
         
