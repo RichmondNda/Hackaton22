@@ -93,7 +93,7 @@
                     @if(!$errorEmail and !$errorMatricule    )
                         <p class="titre_m">Vous devez consigner ici les informations </p>
                     @else
-                        <p class="titre_m" style="color:red; font-weight:bolder">Les addresses email et les matricules doivent êtres unique (rafraichis la page !)</p>
+                        <p class="titre_m" style="color:red; font-weight:bolder">Les emails et les matricules doivent êtres uniques (rafraichissez la page svp!)</p>
                     @endif
                 </div>
                 <div class="champs"> 
