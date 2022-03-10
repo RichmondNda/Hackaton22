@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" media="screen" href="{{asset('css/particles.css')}}">
 
+  <link rel="icon" href="{{asset('images/app/logoSDI-PhotoRoom.png')}}" type="image/icon type">
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <!-- Scripts -->
   <script src="{{ mix('js/app.js') }}" defer></script>
@@ -17,8 +18,8 @@
 <div id="particles-js">
     <div class="flex flex-col items-center justify-center w-full min-h-screen font-bold text-center " style="position:fixed">
         
-        <span class=" text-white text-7xl" style="font-size:50px">
-            HACKATON 2022
+        <span class=" text-white text-7xl" style="font-size:33px">
+            Technovore Hackaton 2022
         </span>   
         <span class="text-black text-2xl " >
             Les Inscriptions seront bientôt disponible

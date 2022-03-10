@@ -47,6 +47,9 @@ class Enregistrement extends Component
     public $email_m3;
     public $genre_m3= "Masculin" ;
 
+    public $errorEmail =false ;
+    public $errorMatricule =false ;
+
 
 
     public function render()
@@ -56,6 +59,32 @@ class Enregistrement extends Component
             'classes' => Classe::where('niveau_id', $this->niveau)->get() 
             
         ]);
+    }
+
+    public function VerifEmail()
+    {
+        if(
+            $this->email_chef == $this->email_m2 or 
+            $this->email_chef == $this->email_m3 or
+            $this->email_m2 == $this->email_m3
+             )
+            {
+                $this->errorEmail = !$this->errorEmail ;
+            }
+    }
+
+    public function VerifMatricule()
+    {
+        if(
+            $this->matricule_chef == $this->matricule_m2 or 
+            $this->matricule_chef == $this->matricule_m3 or
+            $this->matricule_m2 == $this->matricule_m3
+             )
+            {
+                $this->errorMatricule = !$this->errorMatricule ;
+            }
+
+            
     }
 
     public function updatedNiveau()
@@ -132,100 +161,108 @@ class Enregistrement extends Component
 
         ]);
 
+        $this->VerifEmail();
+        $this->VerifMatricule() ;
+
+
+        if(!$this->errorEmail and !$this->errorMatricule)
+        {
+
+            // recuperation de l'hackaton
+
+            $hackaton = Hackaton::latest()->first();
+            
+            // creation de l'équipe
+            $equipe = Equipe::create([ 
+                'nom' => $this->nom_groupe,
+                'logo' => $this->photo_groupe,
+                'niveau_id' => $this->niveau,
+                'hackaton_id' => $hackaton->id
+            ]);
+
+            // creation du participant 1 
+
+            $user1 = User::create([
+                'name' => trim($this->matricule_chef),
+                'email' => $this->email_chef,
+                'password' => Hash::make("TH@123456789")
+            ]);
+
+            $etudiant1 = Etudiant::create([
+                'nom' => $this->nom_chef,
+                'prenom' => $this->prenom_chef,
+                'matricule' => trim($this->matricule_chef),
+                'genre' => $this->genre_chef,
+                'user_id' => $user1->id
+            ]);
+
+
+            // creation du participant 2 
+
+            $user2 = User::create([
+                'name' => trim($this->matricule_m2),
+                'email' => $this->email_m2,
+                'password' => Hash::make("TH@123456789")
+            ]);
+
+            $etudiant2 = Etudiant::create([
+                'nom' => $this->nom_m2,
+                'prenom' => $this->prenom_m2,
+                'matricule' => trim($this->matricule_m2),
+                'genre' => $this->genre_m2,
+                'user_id' => $user2->id
+            ]);
+
+
+            // creation du participant 3 
+
+            $user3 = User::create([
+                'name' => trim($this->matricule_m3),
+                'email' => $this->email_m3,
+                'password' => Hash::make("TH@123456789")
+            ]);
+
+            $etudiant3 = Etudiant::create([
+                'nom' => $this->nom_m3,
+                'prenom' => $this->prenom_m3,
+                'matricule' => trim($this->matricule_m3),
+                'genre' => $this->genre_m3,
+                'user_id' => $user3->id
+            ]);
+
+            // enregistrement des participants
+
+            Participant::create([
+                'chef' => true,
+                'etudiant_id' => $etudiant1->id,
+                'equipe_id' => $equipe->id,
+                'hackaton_id' => $hackaton->id
+            ]);
+
+            Participant::create([
+                'etudiant_id' => $etudiant2->id,
+                'equipe_id' => $equipe->id,
+                'hackaton_id' => $hackaton->id
+            ]);
+
+            Participant::create([
+                'etudiant_id' => $etudiant3->id,
+                'equipe_id' => $equipe->id,
+                'hackaton_id' => $hackaton->id
+            ]);
+
+
+            //  $this->resetInput();
+
+            
+            
+            return redirect()->to('/inscription-terminer');
+
+        }
+
+
         
-        // recuperation de l'hackaton
 
-        $hackaton = Hackaton::latest()->first();
-        
-        // creation de l'équipe
-        $equipe = Equipe::create([ 
-            'nom' => $this->nom_groupe,
-            'logo' => $this->photo_groupe,
-            'niveau_id' => $this->niveau,
-            'hackaton_id' => $hackaton->id
-        ]);
-
-
-        
-
-
-        // creation du participant 1 
-
-        $user1 = User::create([
-            'name' => trim($this->matricule_chef),
-            'email' => $this->email_chef,
-            'password' => Hash::make("TH@123456789")
-        ]);
-
-        $etudiant1 = Etudiant::create([
-            'nom' => $this->nom_chef,
-            'prenom' => $this->prenom_chef,
-            'matricule' => trim($this->matricule_chef),
-            'genre' => $this->genre_chef,
-            'user_id' => $user1->id
-        ]);
-
-
-        // creation du participant 2 
-
-        $user2 = User::create([
-            'name' => trim($this->matricule_m2),
-            'email' => $this->email_m2,
-            'password' => Hash::make("TH@123456789")
-        ]);
-
-        $etudiant2 = Etudiant::create([
-            'nom' => $this->nom_m2,
-            'prenom' => $this->prenom_m2,
-            'matricule' => trim($this->matricule_m2),
-            'genre' => $this->genre_m2,
-            'user_id' => $user2->id
-        ]);
-
-
-        // creation du participant 3 
-
-        $user3 = User::create([
-            'name' => trim($this->matricule_m3),
-            'email' => $this->email_m3,
-            'password' => Hash::make("TH@123456789")
-        ]);
-
-        $etudiant3 = Etudiant::create([
-            'nom' => $this->nom_m3,
-            'prenom' => $this->prenom_m3,
-            'matricule' => trim($this->matricule_m3),
-            'genre' => $this->genre_m3,
-            'user_id' => $user3->id
-        ]);
-
-        // enregistrement des participants
-
-        Participant::create([
-            'chef' => true,
-            'etudiant_id' => $etudiant1->id,
-            'equipe_id' => $equipe->id,
-            'hackaton_id' => $hackaton->id
-        ]);
-
-        Participant::create([
-            'etudiant_id' => $etudiant2->id,
-            'equipe_id' => $equipe->id,
-            'hackaton_id' => $hackaton->id
-        ]);
-
-        Participant::create([
-            'etudiant_id' => $etudiant3->id,
-            'equipe_id' => $equipe->id,
-            'hackaton_id' => $hackaton->id
-        ]);
-
-
-        $this->resetInput();
-
-        
-        
-        return redirect()->to('/inscription-terminer');
     }
 
 }

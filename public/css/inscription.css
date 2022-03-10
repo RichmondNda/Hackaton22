@@ -81,6 +81,12 @@ body
 {
     padding-top:39px;
 }
+.titre_error
+{
+
+    font-weight: bold;
+    color: red;
+}
 .champs
 {
     margin: auto;

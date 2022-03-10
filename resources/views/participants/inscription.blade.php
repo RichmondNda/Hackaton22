@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Hackaton 2022</title>
-
+        <link rel="icon" href="{{asset('images/app/logoSDI-PhotoRoom.png')}}" type="image/icon type">
         
         <link rel="stylesheet" href="{{asset('css/inscription.css')}}" />
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -19,7 +19,7 @@
         
         <div class="navbar">
             <div class="logo">
-                <a href="{{'welcome'}}"><img src="{{asset('images/app/logoHackathon-PhotoRoom.png')}}" class="logoH"></a>
+                <a href="{{route('welcome')}}"><img src="{{asset('images/app/logoHackathon-PhotoRoom.png')}}" class="logoH"></a>
             </div>
             <div class="nav">
                 <ul>

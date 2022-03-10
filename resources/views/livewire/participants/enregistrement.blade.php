@@ -90,8 +90,11 @@
             <div x-show="activeTab===1" >
                 
                 <div class="tete">
-                    
-                    <p class="titre_m">Vous devez consigner ici les informations </p>
+                    @if(!$errorEmail and !$errorMatricule    )
+                        <p class="titre_m">Vous devez consigner ici les informations </p>
+                    @else
+                        <p class="titre_m" style="color:red; font-weight:bolder">Les addresses email et les matricules doivent êtres unique (rafraichis la page !)</p>
+                    @endif
                 </div>
                 <div class="champs"> 
                     
