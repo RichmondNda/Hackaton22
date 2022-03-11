@@ -109,16 +109,16 @@
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Mes informations') }}
                             </x-jet-dropdown-link>
-
+                            
                             
 
                             <div class="border-t border-gray-100"></div>
 
                             <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}" x-data>
+                            <form method="POST" action="{{ route('logout', null, false) }}" x-data>
                                 @csrf
-
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                {{--  href="{{ route('logout') }}" --}}
+                                <x-jet-dropdown-link
                                          @click.prevent="$root.submit();">
                                     {{ __('Se Deconnecter') }}
                                 </x-jet-dropdown-link>
@@ -144,8 +144,17 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Mon espace') }}
             </x-jet-responsive-nav-link>
+
+            @role('Super@Administrateur')
+                <x-jet-responsive-nav-link href="{{ route('Admin.parametres.index') }}" :active="request()->routeIs('Admin.parametres.index')">
+                    {{ __('Paramétrage') }}
+                </x-jet-responsive-nav-link> 
+                <x-jet-responsive-nav-link href="{{ route('Admin.groupe.selection') }}" :active="request()->routeIs('Admin.groupe.selection')">
+                    {{ __('Groupes') }}
+                </x-jet-responsive-nav-link>
+            @endrole
         </div>
 
         <!-- Responsive Settings Options -->
@@ -172,10 +181,10 @@
                 
 
                 <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}" x-data>
+                <form method="POST" action="{{ route('logout', null, false) }}" x-data>
                     @csrf
-
-                    <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                    {{-- href="{{ route('logout', null, false) }}" --}}
+                    <x-jet-responsive-nav-link 
                                    @click.prevent="$root.submit();">
                         {{ __('Se Deconnecter') }}
                     </x-jet-responsive-nav-link>
