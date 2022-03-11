@@ -97,7 +97,7 @@
                                                 {{$hack->pco_1}} 
                                             </div>
                                             <div class="font-bold text-gray-900 text-md">
-                                                {{$hack->pco_2}}
+                                                {{$hack->pco_2}} 
                                             </div>
                                         </td>
 

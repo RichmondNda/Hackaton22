@@ -201,11 +201,19 @@
                     </div>
                                         
                 </div>
-    
-                <div>
+                   
+                <div class=" justify-center">
+                   
+                    @if($errorEmail or $errorMatricule or count($errors) > 0  )
+                        <span class="mx-4 text-xl text-red-500">
+                            veillez verifier vos informations
+                        </span>
+                    @endif
+
                     <button 
                         wire:click.prevent='createEquipe'
-                        class="px-6 py-3 my-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 rounded shadow outline-none ease-linearbg-emerald-500 bg-myblue hover:shadow-lg focus:outline-none" type="submit">
+                        class="px-6 py-3 my-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 rounded shadow outline-none 
+                        @if(!$errorEmail and !$errorMatricule and count($errors) == 0  )  bg-myblue @else bg-gray-500 @endif ease-linearbg-emerald-500  hover:shadow-lg focus:outline-none" type="submit">
                             Confirmer l'enregistrement
                     </button>
                 </div>

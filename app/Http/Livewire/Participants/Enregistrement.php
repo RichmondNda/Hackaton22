@@ -69,7 +69,7 @@ class Enregistrement extends Component
             $this->email_m2 == $this->email_m3
              )
             {
-                $this->errorEmail = !$this->errorEmail ;
+                $this->errorEmail = true ;
             }
     }
 
@@ -81,7 +81,7 @@ class Enregistrement extends Component
             $this->matricule_m2 == $this->matricule_m3
              )
             {
-                $this->errorMatricule = !$this->errorMatricule ;
+                $this->errorMatricule = true ;
             }
 
             
@@ -132,7 +132,7 @@ class Enregistrement extends Component
     public function createEquipe()
     {
         
-        $this->validate([
+        $validate = $this->validate([
             'niveau' => 'required',
             'nom_groupe' => 'required',
 
@@ -160,6 +160,10 @@ class Enregistrement extends Component
             'email_m3' => 'required|email|email|unique:users,email'
 
         ]);
+
+       // dd($validate);
+
+        $this->errorEmail = false ;
 
         $this->VerifEmail();
         $this->VerifMatricule() ;
