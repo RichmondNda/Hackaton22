@@ -206,7 +206,7 @@
                    
                     @if($errorEmail or $errorMatricule or count($errors) > 0  )
                         <span class="mx-4 text-xl text-red-500">
-                            veillez verifier vos informations
+                            veuillez verifier vos informations
                         </span>
                     @endif
 
