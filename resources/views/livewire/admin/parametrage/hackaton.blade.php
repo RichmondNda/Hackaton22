@@ -55,13 +55,7 @@
             </div>
             <div class="col-span-4 ">
 
-                <div class="flex justify-end mb-3">
-                    <a  href="{{route('register', null, false)}}"
-                    class="px-2   py-1 text-sm font-bold flex uppercase  border-orange border transition-all duration-150 rounded shadow outline-none ease-linearbg-emerald-500  hover:shadow-lg focus:outline-none" type="submit">
-
-                        Enregistrer un administrateur    
-                    </a>
-                </div>
+                
                 
                 @if ($hackatons->isNotEmpty())
                     <div class="flex flex-col">
