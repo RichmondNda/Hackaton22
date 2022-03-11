@@ -18,15 +18,15 @@
 <div id="particles-js">
     <div class="flex flex-col items-center justify-center w-full min-h-screen font-bold text-center " style="position:fixed">
         
-        <span class=" text-white text-7xl" style="font-size:33px">
+        <span class="text-white  text-7xl" style="font-size:33px">
             Technovore Hackaton 2022
         </span>   
-        <span class="text-black text-2xl " >
+        <span class="text-2xl text-black " >
             Les Inscriptions seront bientôt disponible
         </span>   
         <br>
 
-        <a class="flex pt-2 text-white text-xl" href="{{route('welcome')}}">
+        <a class="flex pt-2 text-xl text-white" href="{{route('welcome', null, false)}}">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             Accueil
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>

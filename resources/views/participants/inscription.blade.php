@@ -19,12 +19,12 @@
         
         <div class="navbar">
             <div class="logo">
-                <a href="{{route('welcome')}}"><img src="{{asset('images/app/logoHackathon-PhotoRoom.png')}}" class="logoH"></a>
+                <a href="{{route('welcome',  null, false)}}"><img src="{{asset('images/app/logoHackathon-PhotoRoom.png')}}" class="logoH"></a>
             </div>
             <div class="nav">
                 <ul>
-                    <li><a href="{{route('welcome')}}">acceuil</a></li>
-                    <li><a href="{{route('login')}}">connexion</a></li>
+                    <li><a href="{{route('welcome',  null, false)}}">acceuil</a></li>
+                    <li><a href="{{route('login',  null, false)}}">connexion</a></li>
                 </ul>
             </div>
         </div>

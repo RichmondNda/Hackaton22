@@ -30,16 +30,16 @@
                         @auth
                             
                             <div class="b1">
-                                <a href="{{route('dashboard')}}"><button type="button"> <span></span> Mon profil</button></a>
+                                <a href="{{route('dashboard',  null, false)}}"><button type="button"> <span></span> Mon profil</button></a>
                             </div>
                             
                             
                         @else
                             <div class="b1">
-                                <a href="{{route('Participants.inscription')}}"><button type="button">  INSCRIPTION</button></a>
+                                <a href="{{route('Participants.inscription',  null, false)}}"><button type="button">  INSCRIPTION</button></a>
                             </div>
                             <div class="b2">
-                                <a href="{{route('login')}}"><button type="button"><span></span> CONNEXION</button></a>  
+                                <a href="{{route('login',  null, false)}}"><button type="button"><span></span> CONNEXION</button></a>  
                             </div> 
                         @endauth
                     

@@ -5,22 +5,22 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
-                    <a href="{{ route('welcome') }}">
+                    <a href="{{ route('welcome', null, false) }}">
                         <x-jet-application-mark class="block w-auto h-9" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('dashboard', null, false) }}" :active="request()->routeIs('dashboard')">
                         {{ __('Mon espace') }}
                     </x-jet-nav-link> 
 
                     @role('Super@Administrateur')
-                        <x-jet-nav-link href="{{ route('Admin.parametres.index') }}" :active="request()->routeIs('Admin.parametres.index')">
+                        <x-jet-nav-link href="{{ route('Admin.parametres.index', null, false) }}" :active="request()->routeIs('Admin.parametres.index')">
                             {{ __('Paramétrage') }}
                         </x-jet-nav-link> 
-                        <x-jet-nav-link href="{{ route('Admin.groupe.selection') }}" :active="request()->routeIs('Admin.groupe.selection')">
+                        <x-jet-nav-link href="{{ route('Admin.groupe.selection', null, false) }}" :active="request()->routeIs('Admin.groupe.selection')">
                             {{ __('Groupes') }}
                         </x-jet-nav-link>
                     @endrole
@@ -106,7 +106,7 @@
                                 {{ __('Gestion de mon espace') }}
                             </div>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                            <x-jet-dropdown-link href="{{ route('profile.show', null, false) }}">
                                 {{ __('Mes informations') }}
                             </x-jet-dropdown-link>
                             
@@ -143,15 +143,15 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-jet-responsive-nav-link href="{{ route('dashboard', null, false) }}" :active="request()->routeIs('dashboard')">
                 {{ __('Mon espace') }}
             </x-jet-responsive-nav-link>
 
             @role('Super@Administrateur')
-                <x-jet-responsive-nav-link href="{{ route('Admin.parametres.index') }}" :active="request()->routeIs('Admin.parametres.index')">
+                <x-jet-responsive-nav-link href="{{ route('Admin.parametres.index', null, false) }}" :active="request()->routeIs('Admin.parametres.index')">
                     {{ __('Paramétrage') }}
                 </x-jet-responsive-nav-link> 
-                <x-jet-responsive-nav-link href="{{ route('Admin.groupe.selection') }}" :active="request()->routeIs('Admin.groupe.selection')">
+                <x-jet-responsive-nav-link href="{{ route('Admin.groupe.selection', null, false) }}" :active="request()->routeIs('Admin.groupe.selection')">
                     {{ __('Groupes') }}
                 </x-jet-responsive-nav-link>
             @endrole
@@ -174,7 +174,7 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-jet-responsive-nav-link href="{{ route('profile.show', null, false) }}" :active="request()->routeIs('profile.show')">
                     {{ __('Mes informations') }}
                 </x-jet-responsive-nav-link>
 
