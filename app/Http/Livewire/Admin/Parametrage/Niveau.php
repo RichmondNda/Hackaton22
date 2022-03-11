@@ -22,7 +22,7 @@ class Niveau extends Component
     {
         return view('livewire.admin.parametrage.niveau',[
             'niveaux' => ModelsNiveau::all(),
-            'classes' => Classe::orderBy('created_at', 'DESC')->paginate(4)
+            'classes' => Classe::orderBy('created_at', 'DESC')->paginate(6)
         ]);
     }
 
