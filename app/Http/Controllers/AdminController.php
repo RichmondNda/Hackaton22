@@ -63,4 +63,9 @@ class AdminController extends Controller
     {
         return view('Admin.selection') ;
     }
+
+    public function impression()
+    {
+        return view('Admin.Impression') ;
+    }
 }

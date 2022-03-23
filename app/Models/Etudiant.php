@@ -26,14 +26,24 @@ class Etudiant extends Model
     {
         $hackaton = Hackaton::latest()->first() ;
         
-        $equipe = DB::table('etudiants')
-                    
-                    ->join('participants', 'etudiants.id', '=','participants.etudiant_id')
-                    ->join('equipes', 'equipes.id','=', 'participants.equipe_id')
+        $equipe = DB::table('etudiants as etu')
+                    ->leftjoin('participants as part', 'part.etudiant_id', '=' , 'etu.id')
+                    ->join('equipes as equ', 'equ.id','=', 'part.equipe_id')
+                    ->join('niveaux', 'niveaux.id', '=', 'equ.niveau_id')
                     ->selectRaw('*')
-                    ->where('participants.hackaton_id', '=', $hackaton->id)
+                    ->where('etu.id', "=", $this->id)
+                    ->where('part.hackaton_id', '=', $hackaton->id)
                     ->first() ;
+       // dd($equipe);
+        return $equipe;
+    }
 
-        return $equipe->statut;
+
+    public function getEquipe()
+    {
+        $equipe_id = $this->currentEquipe()->equipe_id ;
+
+        $equipe = Equipe::find($equipe_id) ;
+        return $equipe ;
     }
 }

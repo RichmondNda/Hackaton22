@@ -40,7 +40,17 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
             
             Route::get('/admin/parametres',  'App\Http\Controllers\AdminController@index')->name('Admin.parametres.index');
             Route::get('/admin/groupes',  'App\Http\Controllers\AdminController@selectionGroupe')->name('Admin.groupe.selection');
+            Route::get('/admin/impression',  'App\Http\Controllers\AdminController@impression')->name('Admin.groupe.impression');
     
+            Route::get('/pdf/listeEquipe/niveau1', 'App\Http\Controllers\pdfController@listeEquipeN1')->name('liste.equipe.n1');
+            Route::get('/pdf/listeEquipe/niveau2', 'App\Http\Controllers\pdfController@listeEquipeN2')->name('liste.equipe.n2');
+            Route::get('/pdf/listeEquipe/niveau3', 'App\Http\Controllers\pdfController@listeEquipeN3')->name('liste.equipe.n3');
+
+            Route::get('/pdf/listeEquipe/selection/niveau1', 'App\Http\Controllers\pdfController@listeselectEquipeN1')->name('liste.equipe.select.n1');
+            Route::get('/pdf/listeEquipe/selection/niveau2', 'App\Http\Controllers\pdfController@listeselectEquipeN2')->name('liste.equipe.select.n2');
+            Route::get('/pdf/listeEquipe/selection/niveau3', 'App\Http\Controllers\pdfController@listeselectEquipeN3')->name('liste.equipe.select.n3');
+            
+
         });
 
 
@@ -51,6 +61,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/inscriptions', 'App\Http\Controllers\AdminController@inscription')->name('Participants.inscription');
 Route::get('/inscription-terminer', 'App\Http\Controllers\AdminController@inscriptionterminer')->name('terminer');
+
+
 
 //Route::get('/registrer', ) ;
     
