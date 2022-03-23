@@ -75,6 +75,7 @@ class Salle extends Component
         
         $this->resetInput();
         $this->edit_mode = false ;
+        // $this->emitTo('admin.salle', 'refreshComponent');
     }
 
     public function deletesalle(int $id)

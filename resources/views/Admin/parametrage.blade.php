@@ -23,6 +23,9 @@
                         <div x-show="activeTab===2" >
                             @livewire('admin.salle')
                         </div>
+                        <div x-show="activeTab===3" >
+                            @livewire('admin.parametrage.repartition')
+                        </div>
                         {{-- <div x-show="activeTab===2" >
                            Yatana 1 
                         </div>
@@ -54,7 +57,7 @@
             function Tabsetup() {
                 return {
                 activeTab: 0,
-                tabs:['Hackaton', 'niveaux', 'salle']
+                tabs:['Hackaton', 'niveaux', 'salle', 'repartition']
                 
                 };
             };
