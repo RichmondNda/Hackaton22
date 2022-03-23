@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCollationsTable extends Migration
+class CreateRepasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCollationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('collations', function (Blueprint $table) {
+        Schema::create('repas', function (Blueprint $table) {
             $table->id();
             $table->string('libelle') ;
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateCollationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('collations');
+        Schema::dropIfExists('repas');
     }
 }

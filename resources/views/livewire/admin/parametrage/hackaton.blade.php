@@ -2,7 +2,7 @@
     
     <div class="px-4 py-5 ">
 
-        <div class="grid grid-cols-6 gap-4">
+        <div class="md:grid md:grid-cols-6 gap-4">
 
             <div class="col-span-2 ">
                 
