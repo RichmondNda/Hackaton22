@@ -1,8 +1,8 @@
 <x-app-layout>
 
     <div class="py-6">
-        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+        <div class="mx-auto max-w-8xl sm:px-6 lg:px-8">
+            <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
                 
                 <div x-data="Tabsetup()" class="w-full h-full">
                     <ul class="flex items-center justify-center mt-2 mb-4">
@@ -19,6 +19,9 @@
                         </div>
                         <div x-show="activeTab===1" >
                             @livewire('admin.parametrage.niveau')
+                        </div>
+                        <div x-show="activeTab===2" >
+                            @livewire('admin.salle')
                         </div>
                         {{-- <div x-show="activeTab===2" >
                            Yatana 1 
@@ -51,7 +54,7 @@
             function Tabsetup() {
                 return {
                 activeTab: 0,
-                tabs:['Hackaton', 'niveaux']
+                tabs:['Hackaton', 'niveaux', 'salle']
                 
                 };
             };
