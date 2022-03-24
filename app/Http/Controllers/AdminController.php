@@ -127,4 +127,10 @@ class AdminController extends Controller
 
     }
 
+
+    public function gestionRestaurant()
+    {
+        return view('Admin.commande');
+    }
+
 }

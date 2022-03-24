@@ -46,6 +46,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
             Route::get('/admin/parametres',  'App\Http\Controllers\AdminController@index')->name('Admin.parametres.index');
             Route::get('/admin/groupes',  'App\Http\Controllers\AdminController@selectionGroupe')->name('Admin.groupe.selection');
             Route::get('/admin/impression',  'App\Http\Controllers\AdminController@impression')->name('Admin.groupe.impression');
+            Route::get('/admin/restauration',  'App\Http\Controllers\AdminController@gestionRestaurant')->name('Admin.restauration');
     
             Route::get('/pdf/listeEquipe/niveau1', 'App\Http\Controllers\pdfController@listeEquipeN1')->name('liste.equipe.n1');
             Route::get('/pdf/listeEquipe/niveau2', 'App\Http\Controllers\pdfController@listeEquipeN2')->name('liste.equipe.n2');

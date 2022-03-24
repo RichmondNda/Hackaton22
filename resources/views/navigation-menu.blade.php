@@ -39,6 +39,10 @@
                         </x-jet-nav-link> 
                         <x-jet-nav-link href="{{ route('Admin.groupe.impression', null, false) }}" :active="request()->routeIs('Admin.groupe.impression')">
                             {{ __('Impression') }}
+                        </x-jet-nav-link> 
+
+                        <x-jet-nav-link href="{{ route('Admin.restauration', null, false) }}" :active="request()->routeIs('Admin.restauration')">
+                            {{ __('Restauration') }}
                         </x-jet-nav-link>
                     @endrole
                     
@@ -186,7 +190,10 @@
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('Admin.groupe.impression', null, false) }}" :active="request()->routeIs('Admin.groupe.impression')">
                     {{ __('Impression') }}
-                </x-jet-responsive-nav-link>
+                </x-jet-responsive-nav-link> 
+                <x-jet-responsive-nav-link href="{{ route('Admin.restauration', null, false) }}" :active="request()->routeIs('Admin.restauration')">
+                    {{ __('Restauration') }}
+                </x-jet-responsive-nav-link> 
             @endrole
         </div>
 

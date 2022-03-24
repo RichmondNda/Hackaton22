@@ -38,4 +38,12 @@ class Salle extends Model
             return true ;
         }
     }
+
+    public function getNbCollation(int $id)
+    {
+        $collation = Collation::find($id);
+        $nb = Commande::where('collation_id', $collation->id)->count() ;
+
+        return $nb;
+    }
 }
