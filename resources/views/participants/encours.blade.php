@@ -18,11 +18,11 @@
 <div id="particles-js">
     <div class="flex flex-col items-center justify-center w-full min-h-screen font-bold text-center " style="position:fixed">
         
-        <span class="text-white  text-7xl" style="font-size:33px">
-            Technovore Hackaton 2022
+        <span class="text-white text-7xl" style="font-size:33px">
+            Technovore Hackathon 2022
         </span>   
         <span class="text-2xl text-black " >
-            Les Inscriptions seront bientôt disponible
+            Les resultats seront bientôt disponible
         </span>   
         <br>
 
