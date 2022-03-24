@@ -46,4 +46,18 @@ class Etudiant extends Model
         $equipe = Equipe::find($equipe_id) ;
         return $equipe ;
     }
+
+    public function is_chief()
+    {
+        return Participant::where('etudiant_id', $this->id)
+                            ->where('hackaton_id', $hackaton = Hackaton::latest()->first()->id)
+                            ->first()->chef ;
+    }
+
+    public function Commande()
+    {
+        $commande = Commande::where('etudiant_id', $this->id)->first();
+
+        return $commande;
+    }
 }

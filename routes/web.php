@@ -29,11 +29,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+
 // Les routes relatives à la partie de l'administration
 
     // Parametrage des Hackatons
     
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+        Route::get('/restauration','App\Http\Controllers\AdminController@restauration' )->name('restauration');
+        Route::post('/commander','App\Http\Controllers\AdminController@getCommandes' )->name('get.commande');
+
 
 
         Route::group(['middleware' => ['role:Super@Administrateur']], function () {

@@ -15,6 +15,20 @@
                     <x-jet-nav-link href="{{ route('dashboard', null, false) }}" :active="request()->routeIs('dashboard')">
                         {{ __('Mon espace') }}
                     </x-jet-nav-link> 
+                    
+                    @if (Auth::user()->etudiant)
+                        
+                        @if (Auth::user()->etudiant->currentEquipe()->statut)
+                            
+                            <x-jet-nav-link href="{{ route('restauration', null, false) }}" :active="request()->routeIs('restauration')">
+                                {{ __('Restauration') }}
+                            </x-jet-nav-link> 
+
+                        @endif
+                        
+                    @endif
+                   
+                    
 
                     @role('Super@Administrateur')
                         <x-jet-nav-link href="{{ route('Admin.parametres.index', null, false) }}" :active="request()->routeIs('Admin.parametres.index')">
@@ -149,6 +163,19 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard', null, false) }}" :active="request()->routeIs('dashboard')">
                 {{ __('Mon espace') }}
             </x-jet-responsive-nav-link>
+
+            @if (Auth::user()->etudiant)
+                        
+                @if (Auth::user()->etudiant->currentEquipe()->statut)
+                        
+                    <x-jet-responsive-nav-link href="{{ route('restauration', null, false) }}" :active="request()->routeIs('restauration')">
+                        {{ __(' Restauration') }}
+                    </x-jet-responsive-nav-link>
+
+                @endif
+                
+            @endif
+            
 
             @role('Super@Administrateur')
                 <x-jet-responsive-nav-link href="{{ route('Admin.parametres.index', null, false) }}" :active="request()->routeIs('Admin.parametres.index')">

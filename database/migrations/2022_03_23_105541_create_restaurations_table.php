@@ -13,8 +13,23 @@ class CreateRestaurationsTable extends Migration
      */
     public function up()
     {
+        Schema::create('repas', function (Blueprint $table) {
+            $table->id();
+            $table->string('libelle') ;
+            $table->timestamps();
+        });
+
         Schema::create('restaurations', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('etudiant_id');
+            $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('cascade');
+
+            $table->unsignedBigInteger('repa_id');
+            $table->foreign('repa_id')->references('id')->on('repas')->onDelete('cascade');
+
+            $table->unsignedBigInteger('hackaton_id');
+            $table->foreign('hackaton_id')->references('id')->on('hackatons')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +41,7 @@ class CreateRestaurationsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('repas');
         Schema::dropIfExists('restaurations');
     }
 }

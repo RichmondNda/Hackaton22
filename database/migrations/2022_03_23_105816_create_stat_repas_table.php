@@ -15,6 +15,8 @@ class CreateStatRepasTable extends Migration
     {
         Schema::create('stat_repas', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle');
+            $table->text('description');
             $table->timestamps();
         });
     }
