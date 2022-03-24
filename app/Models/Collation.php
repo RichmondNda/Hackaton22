@@ -9,4 +9,10 @@ class Collation extends Model
 {
     use HasFactory;
     public $guarded = [] ;
+
+    public function commandes()
+    {
+    	return $this->hasMany(Commande::class);
+    }
+
 }

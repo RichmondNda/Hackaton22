@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Collation;
+use App\Models\Commande;
 use App\Models\Equipe;
 use App\Models\Hackaton;
 use App\Models\Niveau;
+use App\Models\Salle;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -164,6 +167,48 @@ class pdfController extends Controller
         return $pdf->stream('listeEquipes.pdf');
 
 
+    }
+
+
+    public function repartition()
+    {
+        $hackaton = Hackaton::all()->last();
+        $salles = Salle::all() ;
+        $data = [
+            'title' => 'Hackathon',
+            'date' => date('d-m-Y à h:i:s A'),
+            'salles' => $salles
+            
+        ];
+          
+        $pdf = PDF::loadView('pdf.repartition', $data);
+    
+        // return $pdf->download('listeEquipes.pdf');
+
+        return $pdf->stream('SalleEquipe.pdf');
+    }
+
+
+    public function commandes()
+    {
+        $hackaton = Hackaton::all()->last();
+        $salles = Salle::all() ;
+        $collations = Collation::all() ;
+
+
+        $data = [
+            'title' => 'Hackathon',
+            'date' => date('d-m-Y à h:i:s A'),
+            'salles' => $salles,
+            'collations' =>  $collations
+            
+        ];
+          
+        $pdf = PDF::loadView('pdf.commandes', $data);
+    
+        // return $pdf->download('listeEquipes.pdf');
+
+        return $pdf->stream('CommandeCollations.pdf');
     }
 
 

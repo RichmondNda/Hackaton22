@@ -50,10 +50,10 @@
 
             @else 
                 <p class="text-xl font-bold text-center ">
-                    Bienvenu:
+                    Bienvenue:
                     <br>
                     <span class="text-orange">
-                        Vous etes .. Categorie d'aministrateur 
+                        Bienvenue chèr(e) administrateur sur votre espace 
                     </span>
                 </p>
             @endif
