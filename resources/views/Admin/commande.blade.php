@@ -44,6 +44,8 @@
                         </div>
                     @endif 
             
+                    
+                    
                     <div class="w-full h-full bg-white">
                         
                         <div x-show="activeTab===0" >
@@ -51,7 +53,79 @@
                         </div>
                         
                         <div x-show="activeTab===1" >
-                            @livewire('admin.parametrage.niveau')
+                            
+                            <div class="px-2 py-4  md:py-2">
+                                <div class=" gap-8 md:grid md:grid-cols-6 " >
+                         
+                                 <div class="col-span-2 px-2  ">
+                                     @livewire('admin.restauration.qrcode')
+                                 </div>
+                         
+                                 <div class="font-bold md:col-span-4">
+                                       
+
+                                    <div class="flex flex-col w-full">
+                                        <div class="w-full -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                            <div class="inline-block w-full min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                                <div class="w-full border-b border-gray-200 shadow overflow-x sm:rounded-lg">
+                                                
+                                                    <table class="min-w-full divide-y divide-gray-800">
+                                                        <thead class="bg-gray-100">
+                                                            <tr>
+                                                            
+                                                                <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                                    Intitulé du repas
+                                                                </th>
+                                                                <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                                    
+                                                                </th>
+                                                            
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="bg-white divide-y divide-gray-200">
+                                                            @foreach ($repas as $repa)
+                                                            <tr>
+                                                                
+                                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center">
+                                                                    
+                                                                        <div class="ml-4">
+                                                                            <div class="text-sm font-extrabold text-gray-900">
+                                                                                {{$repa->libelle }} 
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                        
+                                                                <td class="px-6 py-4 text-xl whitespace-nowrap">
+                                                                    {{$repa->restauration()->count()}}  / {{$nb_participants}}   
+                                                                </td>
+                                                                
+                                                                                                                             
+                                                                
+                                                            </tr>
+                                                            @endforeach
+                                                
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                                </div>
+                                                <div class="flex justify-end py-2">
+                                                    {{$repas->links()}}
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                        
+                                    </div>
+
+                                 </div>
+                         
+                                </div>
+                             </div>
+                            
                         </div>
                         
                     </div>
@@ -75,14 +149,37 @@
 
 
     <x-slot name="scripts" >
+
+        <script src="{{ asset('js/vue.js') }}"></script>
+        <script src="{{ asset('js/vueQrCode.js') }}" ></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                methods: {
+                    onDecode (decodedString) {
+                        this.message = decodedString;
+                        this.seen = true 
+                        document.getElementById("Qrcodevalue").value = this.message
+                    }
+                },
+                data: {
+                    message: 'Hello Vue!',
+                    seen: false
+                }
+            })
+        </script>
+        
         <script>
             function Tabsetup() {
                 return {
-                activeTab: 0,
+                activeTab: 1,
                 tabs:['Commandes', 'Restaurant']
                 
                 };
             };
+
+
+            
         </script>
     </x-slot>
 

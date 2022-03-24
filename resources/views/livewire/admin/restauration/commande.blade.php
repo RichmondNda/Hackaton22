@@ -7,9 +7,9 @@
            <div class="text-right">
             <button 
               wire:click.prevent='deleteAllCommande()'
-                class="px-6 py-3 mb-1 mr-1 text-sm font-bold uppercase transition-all duration-150 rounded shadow outline-none ease-linearbg-emerald-500 bg-red-400
+                class="px-6 py-3 mb-1 mr-1 text-sm font-bold uppercase transition-all text-white duration-150 rounded shadow outline-none ease-linearbg-emerald-500 bg-red-600
                 hover:shadow-lg focus:outline-none">
-                    Vider la base de donnée
+                    Supprimer toutes les commandes
             </button>
            </div>
 

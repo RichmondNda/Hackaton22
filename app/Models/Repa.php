@@ -10,4 +10,9 @@ class Repa extends Model
     use HasFactory;
     public $guarded = [] ;
 
+    public function restauration()
+    {
+    	return $this->hasMany(Restauration::class);
+    }
+
 }

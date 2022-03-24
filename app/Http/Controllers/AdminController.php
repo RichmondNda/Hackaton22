@@ -7,9 +7,12 @@ use App\Models\Commande;
 use App\Models\Etudiant;
 use App\Models\Hackaton;
 use App\Models\Collation;
+use App\Models\Repa;
+use App\Models\Restauration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AdminController extends Controller
@@ -130,7 +133,59 @@ class AdminController extends Controller
 
     public function gestionRestaurant()
     {
-        return view('Admin.commande');
+        $repas = Repa::orderBy('created_at', 'DESC')->paginate(8);
+
+        $hackaton = Hackaton::latest()->first() ;
+
+        $nb_participants = DB::table('participants')
+                    ->join('equipes', 'equipes.id', '=', 'participants.equipe_id' )
+                    ->where('equipes.hackaton_id', $hackaton->id)
+                    ->where('equipes.statut', 1)
+                    ->get()
+                    ->count() ;
+
+        return view('Admin.commande', compact('repas', 'nb_participants'));
+    }
+
+
+    public function Soumission(Request $request)
+    {
+        $codeDecrypte = Crypt::decryptString($request->qrcodeValue);
+        
+        $etudiant = Etudiant::where('matricule', $codeDecrypte)->first();
+
+        if(Repa::latest()->first())
+        {
+
+            $statut = Restauration::where('etudiant_id', $etudiant->id)
+                                ->where('repa_id', Repa::latest()->first()->id )
+                                ->where( 'hackaton_id' , Hackaton::latest()->first()->id)
+                                ->first() ;
+            
+            if(!$statut)
+            {
+                Restauration::create([
+                    'etudiant_id' => $etudiant->id,
+                    'repa_id' => Repa::latest()->first()->id,
+                    'hackaton_id' => Hackaton::latest()->first()->id
+                ]);
+
+                $request->session()->flash('success', 'Bon appetit');
+            }
+            else{
+                $request->session()->flash('error', 'Déjà restauré');
+            }
+
+        }
+        else
+        {
+            $request->session()->flash('error', 'Veillez enregistrer le repas');
+        }
+
+        
+        
+
+        return redirect()->back();
     }
 
 }

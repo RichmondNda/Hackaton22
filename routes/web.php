@@ -56,6 +56,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
             Route::get('/pdf/listeEquipe/selection/niveau2', 'App\Http\Controllers\pdfController@listeselectEquipeN2')->name('liste.equipe.select.n2');
             Route::get('/pdf/listeEquipe/selection/niveau3', 'App\Http\Controllers\pdfController@listeselectEquipeN3')->name('liste.equipe.select.n3');
             
+            //qrcode 
+
+            Route::post('/admin/restauration/soumission', 'App\Http\Controllers\AdminController@Soumission')->name('qrcode.Soumission');
 
         });
 
