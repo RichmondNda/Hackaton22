@@ -21,10 +21,11 @@ class AdminController extends Controller
     public function welcome()
     {
         $hackaton = Hackaton::latest()->first() ;
+        $statut =  Hackaton::latest()->first()->CanRecord() ;
 
         if($hackaton->inscription)
         {
-            return view('acceuil') ;
+            return view('acceuil', compact('statut')) ;
         }
         else
         {
@@ -36,11 +37,28 @@ class AdminController extends Controller
     public function inscription()
     {
         $hackaton = Hackaton::latest()->first() ;
+        $statut =  Hackaton::latest()->first()->CanRecord() ;
+
+        if($hackaton->inscription and $statut)
+        {
+           
+            return view('participants.inscription') ;
+        }
+        else
+        {
+            return redirect()->route('welcome') ;
+            
+        }
+    } 
+
+    public function finPreselection()
+    {
+        $hackaton = Hackaton::latest()->first() ;
 
         if($hackaton->inscription)
         {
            
-            return view('participants.inscription') ;
+            return view('participants.FinInsciption') ;
         }
         else
         {

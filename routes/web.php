@@ -73,6 +73,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/inscriptions', 'App\Http\Controllers\AdminController@inscription')->name('Participants.inscription');
 Route::get('/inscription-terminer', 'App\Http\Controllers\AdminController@inscriptionterminer')->name('terminer');
+Route::get('/fin-preselections', 'App\Http\Controllers\AdminController@finPreselection')->name('finPreselection');
 
 
 
