@@ -95,7 +95,7 @@ class AdminController extends Controller
 
     public function impression()
     {
-        return view('Admin.Impression') ;
+        return view('Admin.impression') ;
     }
 
 
