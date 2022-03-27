@@ -40,7 +40,8 @@ return [
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
-            'password' => null,
+            'password' => env('MAIL_PASSWORD'),
+            
         ],
 
         'ses' => [

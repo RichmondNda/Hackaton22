@@ -229,21 +229,19 @@ class AdminController extends Controller
 
         $chef_id = $equipe->participants()->first()->etudiant_id ;
 
-        
 
-        $id =1;
 
-        if($id)
+        if($chef_id)
         {
-            $chef = Etudiant::find($id) ;
+            $chef = Etudiant::find($chef_id) ;
 
             $equipe = $chef->currentEquipe()->libelle ;
             $nom = $chef->nom.' '.$chef->prenom ;
-            $email = $chef->email ;
-
+            $email = $chef->user->email ;
+            
             try{
 
-                $this->sendEmail('ndaregisrichmond@gmail.com', $nom, $equipe);
+                $this->sendEmail($email, $nom, $equipe);
 
             } catch(Exception $e){
 
