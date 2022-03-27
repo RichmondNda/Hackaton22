@@ -238,6 +238,8 @@ class AdminController extends Controller
             $equipe = $chef->currentEquipe()->libelle ;
             $nom = $chef->nom.' '.$chef->prenom ;
             $email = $chef->user->email ;
+
+            $this->sendEmail($email, $nom, $equipe);
             
             try{
 
