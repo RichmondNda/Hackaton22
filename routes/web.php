@@ -62,6 +62,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
             //qrcode 
 
             Route::post('/admin/restauration/soumission', 'App\Http\Controllers\AdminController@Soumission')->name('qrcode.Soumission');
+            Route::post('/admin/sendMail', 'App\Http\Controllers\AdminController@ContacterLesChefs')->name('selection.sendmail');
 
         });
 

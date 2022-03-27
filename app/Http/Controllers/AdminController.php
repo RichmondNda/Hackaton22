@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
+use App\Models\Repa;
 use App\Models\Equipe;
 use App\Models\Commande;
 use App\Models\Etudiant;
 use App\Models\Hackaton;
 use App\Models\Collation;
-use App\Models\Repa;
+use App\Mail\ResultatEmail;
 use App\Models\Restauration;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Crypt;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AdminController extends Controller
@@ -204,6 +207,59 @@ class AdminController extends Controller
         
 
         return redirect()->back();
+    }
+
+    public function sendEmail(string $email, string $nom, string $equipe)
+    {
+        $maildata = [
+            'title' => 'Technovore Hackathon',
+            'nom' => $nom,
+            'equipe' => $equipe
+        ];
+
+        Mail::to($email)->send(new ResultatEmail($maildata));
+
+    }
+
+
+    public function ContacterLesChefs(Request $request)
+    {
+
+        $equipe = Equipe::find($request->id);
+
+        $chef_id = $equipe->participants()->first()->etudiant_id ;
+
+        
+
+        $id =1;
+
+        if($id)
+        {
+            $chef = Etudiant::find($id) ;
+
+            $equipe = $chef->currentEquipe()->libelle ;
+            $nom = $chef->nom.' '.$chef->prenom ;
+            $email = $chef->email ;
+
+            try{
+
+                $this->sendEmail('ndaregisrichmond@gmail.com', $nom, $equipe);
+
+            } catch(Exception $e){
+
+                // En cas d'erreur en local on ne fait rien sauf un flash
+
+                if(env("APP_ENV") == "local"){
+
+                    request()->session()->flash('danger', 'Envoi du mail impossible');
+
+                }
+
+            }
+        }
+        
+        return redirect()->back() ;
+
     }
 
 }

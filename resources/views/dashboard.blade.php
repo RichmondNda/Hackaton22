@@ -97,10 +97,10 @@
                 Bienvenu {{Auth::user()->etudiant->nom ?? Auth::user()->name }} sur ton espace SDI 
             </p>
             <p class="pt-2">
-                cet espace te permettra de consulter les résultats et de consulter les informations relative a ton groupe.
+                cet espace te permettra de consulter les résultats et de consulter les informations relative à ton groupe.
             </p>
             <p class="pt-4">
-                <span class="font-bold text-orange"> HackEat >> </span> est l'espace te permmettant d'avoir access à la restauration de l'hackaton
+                <span class="font-bold text-orange"> HackEat >> </span> est l'espace te permettant d'avoir access à la restauration de l'hackathon
                 il faut noter que pour toutes personnes sélèctionnée la restauration sera assurée les :
                 <ul class="font-bold text-gray-500">
                     <li> Vendredi et Samedi | matin, midi et soir </li>
@@ -110,10 +110,10 @@
 
 
             <p class="pt-4">
-                <span class="font-bold text-orange"> HackNight >> </span> est l'espace te permmettant d'avoir access aux collations relative à l'hackaton
-                il est bon de noter que pour toutes personnes sélèctionnée les collation seront servies le vendredi et le samedi aux heures suivantes
+                <span class="font-bold text-orange"> HackNight >> </span> est l'espace te permettant d'avoir access aux collations relative à l'hackaton
+                il est bon de noter que pour toutes personnes sélèctionnées les collations seront mise a votre disposition le vendredi et le samedi aux heures suivantes
                 <span class="font-bold text-gray-500">
-                    15h 30 | 22h30 | 00h30 | 03h30
+                     22h30 | 00h30 | 03h30
                 </span>
             </p>
 

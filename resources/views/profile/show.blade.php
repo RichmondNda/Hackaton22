@@ -28,10 +28,17 @@
 
                 <x-jet-section-border />
             @endif
+            --}}
 
-            <div class="mt-10 sm:mt-0">
-                @livewire('profile.logout-other-browser-sessions-form')
-            </div>
+
+
+            @role('Super@Administrateur')
+                <div class="mt-10 sm:mt-0">
+                    @livewire('profile.logout-other-browser-sessions-form')
+                </div>
+            @endrole
+
+            {{--
 
             @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
                 <x-jet-section-border />
