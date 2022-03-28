@@ -1,4 +1,4 @@
-# HACKATHON 22
+# HACKATHON 22 ( en cours de rédaction )
 Pour mener à l'organisation de son Hackathon (édition 2022) le Conseil Estudiantin de l'Esatic m'a confié la conception et la réalisation d'une application pour assuer d'une part la gestion des inscription  et d'autre part les différentes activités liées à celle.
 Je vous présenterez en premier lieu les différentes pages et par la suite les différentes configuration à faire après avoir clonner le projet.
 Merci et surtout bonne lecture!!!
