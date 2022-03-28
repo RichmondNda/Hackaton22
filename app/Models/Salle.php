@@ -42,7 +42,8 @@ class Salle extends Model
     public function getNbCollation(int $id)
     {
         $collation = Collation::find($id);
-        $nb = Commande::where('collation_id', $collation->id)->count() ;
+        $nb = Commande::where('collation_id', $collation->id)
+                        ->where('salle_id',$this->id)->count() ;
 
         return $nb;
     }
