@@ -1,64 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# HACKATHON 22
+Pour mener à l'organisation de son Hackathon (édition 2022) le Conseil Estudiantin de l'Esatic m'a confié la conception et la réalisation d'une application pour assuer d'une part la gestion des inscription  et d'autre part les différentes activités liées à celle.
+Je vous présenterez en premier lieu les différentes pages et par la suite les différentes configuration à faire après avoir clonner le projet.
+Merci et surtout bonne lecture!!!
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+##### J'aimerais preciser que les images seront celles des testes en local d'ou le fait que le qite en non sécurisé soit en http merci
 
-## About Laravel
+## Page d'acceuil
+![Aceuill (751)](https://user-images.githubusercontent.com/62190055/160437217-f239db67-7d04-4f81-bb38-e58e4a16928f.png)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Comme vous pouvez le voir à partir de cette pages les differents participants ont la possibilité d'éffectuer leurs inscription et aussi de se connecter à leurs espace utilisateur. Sans plus tarder je vous présente la page d'inscription avant de vous présenter l'espace administrateur
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Page d'inscription
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![Capture d’écran (753)](https://user-images.githubusercontent.com/62190055/160438152-728597f4-3c53-4ae6-9e24-4c4d205e5fec.png)
+Comme vous pouvez le voir durant l'inscription, nous demandons aux differents participant de nous donner leur nom et leur prenoms, leur matricule ainsi que les informations relative à leur classe. Il faut noter que le choix des classes est une liste selective qui elle est fontion des parametres défini par l'administrateur.
 
-## Learning Laravel
+Je sais que vous avez hâte de découvrire en détails l'espace administrateur, ouvrez grand les yeux.
+Pour commencer je vous présenterez l'espace de paramétrage 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Hackathons
+![Capture d’écran (756)](https://user-images.githubusercontent.com/62190055/160440952-00f47990-b493-4e31-84fc-23c372d5f43b.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ici comme vous pouvez le voir l'on à penser à la réutilisabilité de ladite application pour les hackathon à venir, pour ce faire nous permettons aux différents gestionnaire de créer de nouveaux Hackathon en enregistrant les informations des différents Présidents du Comité d'Organisation (PCO).
+Pour cette année moi, **N'DA REGIS RICHMOND et DJE BI MOINTI** sommes les différents PCO. il est bon de noter que dés la création d'un nouvelle hackaton les données présenté sur toutes les pages en partant de l'inscription à l'administration sont relative qu'a ce Hackaton les précédentes informations sont automatiquement harchivées.
 
-## Laravel Sponsors
+### Niveaux et classes
+![Capture d’écran (759)](https://user-images.githubusercontent.com/62190055/160442083-5c65c105-bf3c-40ad-a3f6-aba1d5707a42.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Ici nous vous présentons l'espace permettant à l'administrateur d'ajouter une classe et de la liée à un niveau.
+Comme nous vous l'avions dit au cours de l'inscription dés que le participant choisi le niveau les classes qui sont affichées ne sont que celles du nieau concerné et voici l'espace permettant à l'administrateur d'effectuer cette configuration.
 
-### Premium Partners
+### Salles et équipes
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+Chaque année le C2E éffectue un repartition des equipes dans le différentes salles de classes disponible et répondant aux norme qu'il s'est fixé ainsi grâce à la page qui suivra vous aurez la possibilité d'une part d'enregister les salles sémectionnée. Il faut noter qu'au moment d'enregistrer une salle l'on précise le nombre d'équipes que cette salle peut acceuillir. 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![Capture d’écran (759)](https://user-images.githubusercontent.com/62190055/160443343-de652834-375b-41c0-9e68-33a0de969c68.png)
 
-## Code of Conduct
+Après l'enregistrement des salles il faut éffectuer une repartition des equipes la pages qui suit vous présente comment se fera la répartition
+l'on aura devant soit la liste des equipes seléctionnées et la salle qui leur est affiliée pourar être sélectioner et enregistrée.
+comme vous pourrez l'oberver que la liste des différents salles et les équipes de celles-ci
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![Capture d’écran (763)](https://user-images.githubusercontent.com/62190055/160444284-03711afb-2c1e-4fee-89c3-a6e698d88081.png)
 
-## Security Vulnerabilities
+### restauration
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Pour la restauration nous avons penser à rendre dynamique les différents collations qui serons servies aux participant mais aussi les differents moment de restauration . Il faut noter que chaque participant sélectionné à sur son espace un codeQr qui sera scanner a chaque fois qu'il ira se faire restaurer 
+les chefs d'équipe quand à eux aurons la possibilité aux moment opportun de choisir en commun accord avec les autres mebre les différents collations qu'ils désire et ils séront servis incessament.
 
-## License
+__Commençons avec la création des collations et des moment de réstauration__
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![Capture d’écran (762)](https://user-images.githubusercontent.com/62190055/160445108-4949271b-c938-4ec3-92c9-e48e90095200.png)
+
+__Nous vous présentons lespace du gestionnaire de la restauration__
+
+![Capture d’écran (767)](https://user-images.githubusercontent.com/62190055/160445964-16db84b3-d30f-4adb-9c57-700014200db8.png)
+
+Ici se trouve le scanner de codeQr, au moment de la restauration les différents participants présenterons leurs code et àprès un scan ceux-ci ne pourrons plus avoir accés à la nourriture en utilisant un code déjà scanné. Aussi pour des besoins statistiques aprés le scan d'un code nous incrémentons le nombre de repas servis
+
